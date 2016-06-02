@@ -1,14 +1,12 @@
 import React from 'react';
+import Nav from 'Nav';
 
 export default (props) => {
   return (
     <div>
-      <div>
-        <div>
-          <p>Main.jsx rendered</p>
-          { props.children }
-        </div>
-      </div>
+      <Nav />
+      <p>Main.jsx rendered</p>
+      { props.children }
     </div>
   );
 }
