@@ -2,6 +2,7 @@
   "name": "react-weather",
   "version": "1.0.0",
   "description": "Basic weather app built with react",
+  "repository": "https://github.com/KyleHodgetts/ReactTimer",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -35,6 +36,7 @@
     "mocha": "^2.5.3",
     "motion-ui": "^1.2.2",
     "node-sass": "^3.7.0",
+    "react-addons-test-utils": "^15.1.0",
     "sass-loader": "^3.2.0",
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.1",
