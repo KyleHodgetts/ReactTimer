@@ -11,10 +11,19 @@ export default class Clock extends React.Component {
   }
 
   render = () => {
+    let { totalSeconds } = this.props;
     return (
-      <div>
-
+      <div className="clock">
+        <span className="clock-text">{this.formatSeconds(totalSeconds)}</span>
       </div>
     );
   }
+}
+
+Clock.defaultProps = {
+  totalSeconds: 0
+}
+
+Clock.propTypes = {
+  totalSeconds: React.PropTypes.number
 }

@@ -8,12 +8,12 @@ export default () => {
         <ul className="menu">
           <li className="menu-text white">React Timer</li>
           <li>
-            <IndexLink to="/" activeClassName="active-link" activeStyle={{fontWeight: 'bold'}}>
+            <IndexLink to="/" activeClassName="active-link">
               Timer
             </IndexLink>
           </li>
           <li>
-            <Link to="/countdown" activeClassName="active-link" activeStyle={{fontWeight: 'bold'}}>
+            <Link to="/countdown" activeClassName="active-link">
               Countdown
             </Link>
           </li>
