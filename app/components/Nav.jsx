@@ -13,7 +13,7 @@ export default () => {
             </IndexLink>
           </li>
           <li>
-            <Link to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>
+            <Link to="/countdown" activeClassName="active-link" activeStyle={{fontWeight: 'bold'}}>
               Countdown
             </Link>
           </li>
