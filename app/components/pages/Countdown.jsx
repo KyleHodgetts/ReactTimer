@@ -28,7 +28,7 @@ export default class Countdown extends React.Component {
   }
 
   componentWillUnmount = () => {
-    this.stopTimer();
+    this.unhookTimer();
   }
 
   handleSetCountdown = (seconds) => {
