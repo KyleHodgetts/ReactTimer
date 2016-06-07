@@ -12,10 +12,6 @@ export default class Countdown extends React.Component {
     }
   }
 
-  componentWillUnmount = () => {
-    this.stopTimer();
-  }
-
   componentDidUpdate = (_, prevState) => {
     if(this.state.countdownStatus !== prevState.countdownStatus) {
       switch (this.state.countdownStatus) {
@@ -25,11 +21,14 @@ export default class Countdown extends React.Component {
         case 'stopped':
           this.setState({ count: 0 });
         case 'paused':
-          this.timer && clearInterval(this.timer);
-          this.timer = false;
+          this.unhookTimer();
           break;
       }
     }
+  }
+
+  componentWillUnmount = () => {
+    this.stopTimer();
   }
 
   handleSetCountdown = (seconds) => {
@@ -49,7 +48,15 @@ export default class Countdown extends React.Component {
       this.setState({
         count: newCount >= 0 ? newCount : 0
       });
+      if (newCount == 0) {
+        this.setState({ countdownStatus: 'stopped' });
+      }
     }, 1000);
+  }
+
+  unhookTimer = () => {
+    this.timer && clearInterval(this.timer);
+    this.timer = false;
   }
 
   render = () => {
