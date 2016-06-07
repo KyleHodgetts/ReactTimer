@@ -19,7 +19,6 @@ describe ('<Controls />', () => {
 
     it ('should render start when paused', () => {
       let controls = TestUtils.renderIntoDocument(<Controls countDownStatus="paused" />);
-      let element = ReactDOM.findDOMNode(controls);
       let startButton = TestUtils.scryRenderedDOMComponentsWithTag(controls, 'button')[0];
       expect(startButton.innerHTML).toBe('Start');
     });
