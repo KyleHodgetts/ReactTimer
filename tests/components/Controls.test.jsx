@@ -12,13 +12,13 @@ describe ('<Controls />', () => {
 
   describe ('render', () => {
     it ('should render pause when started', () => {
-      let controls = TestUtils.renderIntoDocument(<Controls countDownStatus="started" />);
+      let controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started" />);
       let pauseButton = TestUtils.scryRenderedDOMComponentsWithTag(controls, 'button')[0];
       expect(pauseButton.innerHTML).toBe('Pause');
     });
 
     it ('should render start when paused', () => {
-      let controls = TestUtils.renderIntoDocument(<Controls countDownStatus="paused" />);
+      let controls = TestUtils.renderIntoDocument(<Controls countdownStatus="paused" />);
       let startButton = TestUtils.scryRenderedDOMComponentsWithTag(controls, 'button')[0];
       expect(startButton.innerHTML).toBe('Start');
     });
