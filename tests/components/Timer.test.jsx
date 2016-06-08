@@ -10,10 +10,10 @@ describe ('<Timer />', () => {
     expect(Timer).toExist();
   });
 
-  it ('should start off paused with a count of 0', () => {
+  it ('should start off stopped with a count of 0', () => {
     let timer = TestUtils.renderIntoDocument(<Timer />);
     expect(timer.state.count).toBe(0);
-    expect(timer.state.countdownStatus).toBe('paused');
+    expect(timer.state.timerStatus).toBe('stopped');
   });
 
   it ('should count upwards when started', () => {
@@ -41,7 +41,7 @@ describe ('<Timer />', () => {
     }, 1001);
   });
 
-  it ('when in the started state should reset count to 0 and to paused when cancel is pressed', () => {
+  it ('when in the started state should reset count to 0 and to stopped when cancel is pressed', () => {
     let timer = TestUtils.renderIntoDocument(<Timer />);
     timer.handleStatusChange('started');
     setTimeout(() => {
@@ -50,6 +50,6 @@ describe ('<Timer />', () => {
     }, 1001);
     timer.handleStatusChange('stopped');
     expect(timer.state.count).toBe(0);
-    expect(timer.state.countdownStatus).toBe('paused');
+    expect(timer.state.timerStatus).toBe('stopped');
   });
 });
