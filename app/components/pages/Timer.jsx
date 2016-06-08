@@ -26,6 +26,10 @@ export default class Timer extends React.Component {
     }
   }
 
+  componentWillUnmount = () => {
+    this.unhookTimer();
+  }
+
   handleStatusChange = (newStatus) => {
     this.setState({ timerStatus: newStatus });
   }
